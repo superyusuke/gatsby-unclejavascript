@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.item {
+  padding: 0 20px;
+}
+
+.link {
+  color: wheat;
+}

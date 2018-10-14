@@ -11,7 +11,10 @@ const Header = styled.h1`
 `
 
 const IndexPage = () => (
-  <Layout>
+  <Layout
+    title="トップページ"
+    description="トップページや"
+  >
     <Header>Atwood の法則</Header>
     <p className={testStyles.test}>
       JavaScript で書けるアプリケーションは全て、最終的に JavaScript
@@ -21,14 +24,6 @@ const IndexPage = () => (
       Any application that can be written in JavaScript, will eventually be
       written in JavaScript.
     </p>
-    <ul>
-      <li>
-        <Link to="/about/">About me</Link>
-      </li>
-      <li>
-        <Link to="/page-3/">Go to page 3</Link>
-      </li>
-    </ul>
   </Layout>
 )
 
