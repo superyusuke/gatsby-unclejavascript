@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'JavaScript おじさん.com',
+    description: 'JavaScript の推進を推進'
   },
   plugins: [
     'gatsby-plugin-react-helmet',

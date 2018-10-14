@@ -10,9 +10,23 @@ const Header = styled.h1`
 
 const IndexPage = () => (
   <Layout>
-    <Header>JavaScript おじさん.com</Header>
-    <Link to="/page-2/">Go to page 2</Link>
-    <Link to="/page-3/">Go to page 3</Link>
+    <Header>Atwood の法則</Header>
+    <p>
+      JavaScript で書けるアプリケーションは全て、最終的に JavaScript
+      で書かれることになっている。
+    </p>
+    <p>
+      Any application that can be written in JavaScript, will eventually be
+      written in JavaScript.
+    </p>
+    <ul>
+      <li>
+        <Link to="/about/">About me</Link>
+      </li>
+      <li>
+        <Link to="/page-3/">Go to page 3</Link>
+      </li>
+    </ul>
   </Layout>
 )
 
