@@ -43,11 +43,6 @@ const Header = ({ siteTitle }) => (
             Go to page 3
           </Link>
         </li>
-        <li className={styles.item}>
-          <Link className={styles.link} to="/markdown/">
-            マークダウン
-          </Link>
-        </li>
       </ul>
     </div>
   </div>
