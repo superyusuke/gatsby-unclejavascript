@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: 'JavaScript おじさん.com',
@@ -18,11 +20,18 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `src`,
+    //     path: `${__dirname}/src/`,
+    //   },
+    // },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.ACCESS_TOKEN,
       },
     },
     {
