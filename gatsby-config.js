@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'JavaScript おじさん.com',
-    description: 'JavaScript の推進を推進'
+    description: 'JavaScript の推進を推進',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -18,6 +18,30 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-styled-components'
+    'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-code-titles`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+            },
+          },
+        ],
+      },
+    },
   ],
 }

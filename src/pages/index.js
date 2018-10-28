@@ -1,10 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
-
-import testStyles from '../components/test.module.css'
 
 const Header = styled.h1`
   color: red;
@@ -16,7 +13,7 @@ const IndexPage = () => (
     description="トップページや"
   >
     <Header>Atwood の法則</Header>
-    <p className={testStyles.test}>
+    <p>
       JavaScript で書けるアプリケーションは全て、最終的に JavaScript
       で書かれることになっている。
     </p>

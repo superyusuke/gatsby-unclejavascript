@@ -43,6 +43,11 @@ const Header = ({ siteTitle }) => (
             Go to page 3
           </Link>
         </li>
+        <li className={styles.item}>
+          <Link className={styles.link} to="/graphql-test/">
+            graphql-test.js
+          </Link>
+        </li>
       </ul>
     </div>
   </div>
