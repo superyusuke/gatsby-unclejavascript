@@ -44,8 +44,8 @@ const Header = ({ siteTitle }) => (
           </Link>
         </li>
         <li className={styles.item}>
-          <Link className={styles.link} to="/graphql-test/">
-            graphql-test.js
+          <Link className={styles.link} to="/markdown/">
+            マークダウン
           </Link>
         </li>
       </ul>
