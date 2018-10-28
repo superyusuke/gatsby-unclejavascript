@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
+import parse from 'date-fns/parse'
+import format from 'date-fns/format'
 
 const IndexPage = ({ data }) => (
   <Layout title="トップページ" description="トップページや">
@@ -15,7 +17,9 @@ const IndexPage = ({ data }) => (
     </p>
     <ul>
       {data.allContentfulBlogPost.edges.map(({ node }) => {
-        return <li><Link to={`${node.slug}`}>{node.title}</Link></li>
+        const date = parse(node.createdAt)
+        const formattedDate = format(date, 'YYYY/MM/DD')
+        return <li><Link to={`${node.slug}`}>{node.title} {formattedDate}</Link></li>
       })}
     </ul>
   </Layout>
@@ -30,6 +34,7 @@ export const query = graphql`
         node {
           title
           slug
+          createdAt
         }
       }
     }
