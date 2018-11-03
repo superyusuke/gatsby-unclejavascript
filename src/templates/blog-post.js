@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 
 export default ({ data }) => {
   const post = data.contentfulBlogPost
-  console.log(post)
   return (
     <Layout>
       <div>
