@@ -5,7 +5,7 @@ import styles from './header.module.css'
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: 'rebeccapurple',
+      // background: 'rebeccapurple',
       marginBottom: '1.45rem',
     }}
   >
@@ -17,13 +17,7 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
+        <Link to="/" style={{ color: '#FFD399' }}>
           JavaScript おじさん.com
         </Link>
       </h1>
@@ -36,11 +30,6 @@ const Header = ({ siteTitle }) => (
         <li className={styles.item}>
           <Link className={styles.link} to="/about/">
             About me
-          </Link>
-        </li>
-        <li className={styles.item}>
-          <Link className={styles.link} to="/page-3/">
-            Go to page 3
           </Link>
         </li>
       </ul>

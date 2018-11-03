@@ -8,7 +8,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <div>
-        <h1>{post.title}</h1>
+        <h2>{post.title}</h2>
         <div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />
       </div>
     </Layout>
