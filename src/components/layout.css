@@ -5,18 +5,60 @@ body {
 
 h1 {
   color: rgb(255, 211, 153);
+  transition: opacity 0.5s;
+}
+
+h1:hover {
+  opacity: 0.5;
 }
 
 h2 {
   color: rgb(64, 169, 243);
   margin-bottom: 20px;
+  transition: opacity 0.3s;
+}
+
+h2:hover {
+  opacity: 0.7;
+}
+
+li {
+  list-style: none;
 }
 
 a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+}
+
+a {
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
 }
 
 img {
   max-width: 100%;
+}
+
+.gatsby-highlight {
+  transform-origin: top left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gatsby-code-title {
+  transform-origin: bottom left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gatsby-highlight:hover {
+  transform: scale(1.03);
+}
+
+.gatsby-code-title:hover {
+  transform: scale(1.05);
 }
