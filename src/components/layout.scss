@@ -42,20 +42,6 @@ img {
   max-width: 100%;
 }
 
-.gatsby-highlight {
-  transform-origin: top left;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.03);
-  }
-}
-
-.gatsby-code-title {
-  transform-origin: bottom left;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
+p {
+  padding: 5px 0;
 }

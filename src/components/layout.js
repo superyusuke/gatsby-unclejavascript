@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import Header from './header'
 import './layout.scss'
-import './codeHighlight.css'
+import './codeHighlight.scss'
 
 const Layout = ({ children, title, description, headerTitle }) => (
   <div>

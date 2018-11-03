@@ -1,0 +1,49 @@
+.gatsby-highlight-code-line {
+  background-color: #440618;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #c6f8ff;
+}
+
+.gatsby-highlight pre[class*='language-'] {
+  border-radius: 0 8px 8px 8px;
+}
+
+.gatsby-code-title {
+  background: #2d2d2d;
+  color: #b4ad79;
+  margin-bottom: -0.65em;
+  padding: 0.7rem 1.05rem 0.4rem;
+  font-size: 0.8em;
+  line-height: 0.2;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-weight: 600;
+  display: table;
+  border-radius: 8px 8px 0 0;
+}
+
+pre[class*='language-'] {
+  margin-bottom: 40px;
+}
+
+.gatsby-highlight {
+  transform-origin: top left;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.gatsby-code-title {
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 40px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
