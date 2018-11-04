@@ -7,7 +7,6 @@ module.exports = {
     description: 'JavaScript の推進を推進',
   },
   plugins: [
-    `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
