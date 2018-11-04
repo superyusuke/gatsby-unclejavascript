@@ -7,7 +7,20 @@ export default ({ data }) => {
   return (
     <Layout description={post.description} title={post.title}>
       <div>
-        <h2>{post.title}</h2>
+        <div className="title-wrapper">
+          <h2 className="post-title">{post.title}</h2>
+          <a
+            target="_blank"
+            href={`https://twitter.com/intent/tweet?text=${
+              post.title
+              }%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${
+              post.slug
+              }/&via=better_than_i_w`}
+            className="tweet"
+          >
+            Tweet
+          </a>
+        </div>
         <div
           dangerouslySetInnerHTML={{
             __html: post.content.childMarkdownRemark.html,
