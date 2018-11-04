@@ -10,7 +10,13 @@ const Layout = ({ children, title, description, headerTitle }) => (
   <div>
     <Helmet
       title={title}
-      meta={[{ name: 'description', content: description }]}
+      meta={[
+        { name: 'description', content: description },
+        {
+          name: 'google-site-verification',
+          content: 'vTfUD5wSnsVVdXI3qixqyLK-EXKbKnd-P2dx9rkYv-Y',
+        },
+      ]}
     >
       <html lang="en" />
     </Helmet>
