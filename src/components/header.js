@@ -17,13 +17,13 @@ const Header = ({ siteTitle }) => (
     >
       <h1 style={{ margin: 0 }}>
         <Link to="/" style={{ color: '#FFD399' }}>
-          JavaScript おじさん.com
+          JavaScript おじさん .com
         </Link>
       </h1>
       <ul className={styles.wrapper}>
         <li className={styles.item}>
           <Link className={styles.link} to="/">
-            Top
+            Article
           </Link>
         </li>
         <li className={styles.item}>
