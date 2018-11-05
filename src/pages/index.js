@@ -11,7 +11,13 @@ const IndexPage = ({ data }) => (
       {data.allContentfulBlogPost.edges.map(({ node }) => {
         const date = parse(node.createdAt)
         const formattedDate = format(date, 'YYYY/MM/DD')
-        return <li key={node.slug}><Link to={`${node.slug}`}>{node.title} {formattedDate}</Link></li>
+        return (
+          <li key={node.slug}>
+            <Link to={`${node.slug}`}>
+              {node.title} {formattedDate}
+            </Link>
+          </li>
+        )
       })}
     </ul>
   </Layout>
