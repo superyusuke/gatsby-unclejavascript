@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => (
         return (
           <li key={node.slug}>
             <Link to={`${node.slug}`}>
-              {node.title} {formattedDate}
+              {node.title} {formattedDate} | {node.tags.join(', ')}
             </Link>
           </li>
         )
@@ -33,6 +33,7 @@ export const query = graphql`
           title
           slug
           createdAt
+          tags
         }
       }
     }
