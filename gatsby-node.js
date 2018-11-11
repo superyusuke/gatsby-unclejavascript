@@ -1,4 +1,5 @@
 const path = require(`path`)
+const _flattenDeep = require('lodash/flattenDeep')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -20,6 +21,33 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
         slug: node.slug,
+      },
+    })
+  })
+
+  const result2 = await graphql(`
+    {
+      allContentfulBlogPost {
+        edges {
+          node {
+            tags
+          }
+        }
+      }
+    }
+  `)
+
+  const tags2DArray = result2.data.allContentfulBlogPost.edges.map(
+    ({ node }) => node.tags
+  )
+  const tagsArray = _flattenDeep(tags2DArray)
+
+  tagsArray.forEach((tag) => {
+    createPage({
+      path: tag,
+      component: path.resolve(`./src/templates/post-by-tag.js`),
+      context: {
+        tag,
       },
     })
   })
