@@ -11,6 +11,7 @@ export default ({ data }) => {
           <h2 className="post-title">{post.title}</h2>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href={`https://twitter.com/intent/tweet?text=${
               post.title
               }%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${
