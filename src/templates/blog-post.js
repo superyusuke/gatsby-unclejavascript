@@ -6,7 +6,7 @@ export default ({ data }) => {
   const post = data.contentfulBlogPost
   return (
     <Layout description={post.description} title={post.title}>
-      <div>
+      <div className="post">
         <div className="title-wrapper">
           <h2 className="post-title">{post.title}</h2>
           <a
