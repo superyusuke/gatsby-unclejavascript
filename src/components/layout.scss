@@ -47,7 +47,6 @@ p {
   margin: 10px 0;
 }
 
-
 .tweet {
   color: #ffd399;
   background: rgb(64, 169, 243);
@@ -78,5 +77,14 @@ p {
     display: block;
     margin: 30px auto;
   }
-}
 
+  & blockquote {
+    display: block;
+    padding: 5px 20px;
+    margin: 0 0 20px;
+    border-left: 4px solid #f5f5f5;
+    font-style: italic;
+    font-family: 'Avenir Next W01', Helvetica, sans-serif;
+    font-size: 15px;
+  }
+}
