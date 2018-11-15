@@ -3,10 +3,12 @@ import { graphql, Link } from 'gatsby'
 import parse from 'date-fns/parse'
 import format from 'date-fns/format'
 import Layout from '../components/layout'
+import '../components/post-by-tag.scss'
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
+  const { tag } = pageContext
   return (
-    <Layout title="Tag ごとのページ" description="tag ごとのページ">
+    <Layout title={`${tag} のページ`} description={`${tag} ごとのページ`}>
       <ul>
         {data.allContentfulBlogPost.edges.map(({ node }) => {
           const date = parse(node.createdAt)
