@@ -5,6 +5,8 @@ import Layout from '../components/layout'
 import _flattenDeep from 'lodash/flattenDeep'
 import _uniq from 'lodash/uniq'
 
+import '../components/category.scss'
+
 const Category = ({ data }) => {
   const tags2DArray = data.allContentfulBlogPost.edges.map(
     ({ node }) => node.tags
@@ -19,7 +21,7 @@ const Category = ({ data }) => {
       <ul>
         {tagsArray.map(tag => {
           return (
-            <li key={tag}>
+            <li className="blog-post-list__item" key={tag}>
               <Link to={tag}>{tag}</Link>
             </li>
           )
