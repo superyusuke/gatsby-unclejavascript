@@ -97,3 +97,13 @@ p {
     list-style-type: square;
   }
 }
+
+.index {
+  &-list {
+    &__date {
+      font-size: 12px;
+      font-family: cursive;
+      color: #ffd399
+    }
+  }
+}
