@@ -1,8 +1,15 @@
-.blog-post {
+.category {
   &-list {
     &__item {
       float: left;
       margin-right: 10px;
+    }
+    &__link {
+      color: #ffd399;
+
+      &:hover {
+        color: #40a9f3;
+      }
     }
   }
 }

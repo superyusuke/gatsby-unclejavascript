@@ -21,8 +21,8 @@ const Category = ({ data }) => {
       <ul>
         {tagsArray.map(tag => {
           return (
-            <li className="blog-post-list__item" key={tag}>
-              <Link to={tag}>{tag}</Link>
+            <li className="category-list__item" key={tag}>
+              <Link className="category-list__link" to={tag}>{tag}</Link>
             </li>
           )
         })}
