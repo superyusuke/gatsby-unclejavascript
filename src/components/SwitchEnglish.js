@@ -11,14 +11,14 @@ class SwitchEnglish extends React.Component {
   none = () => {
     const quote = document.querySelectorAll('blockquote')
     quote.forEach(o => (o.style.display = 'none'))
-    this.setState({ english: true })
+    this.setState({ english: false })
     console.log(this.state.english)
   }
 
   block = () => {
     const quote = document.querySelectorAll('blockquote')
     quote.forEach(o => (o.style.display = 'block'))
-    this.setState({ english: false })
+    this.setState({ english: true })
     console.log(this.state.english)
   }
 
@@ -37,15 +37,15 @@ class SwitchEnglish extends React.Component {
       <div className="switch-english">
         <button
           className={this.buttonStyle(this.state.english)}
-          onClick={this.none}
-        >
-          英語非表示
-        </button>
-        <button
-          className={this.buttonStyle(!this.state.english)}
           onClick={this.block}
         >
           英語表示
+        </button>
+        <button
+          className={this.buttonStyle(!this.state.english)}
+          onClick={this.none}
+        >
+          英語非表示
         </button>
       </div>
     )
