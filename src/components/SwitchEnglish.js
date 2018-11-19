@@ -39,13 +39,13 @@ class SwitchEnglish extends React.Component {
           className={this.buttonStyle(this.state.english)}
           onClick={this.block}
         >
-          英語表示
+          対訳
         </button>
         <button
           className={this.buttonStyle(!this.state.english)}
           onClick={this.none}
         >
-          英語非表示
+          日本語のみ
         </button>
       </div>
     )
