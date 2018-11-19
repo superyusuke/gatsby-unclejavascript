@@ -1,9 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import SwitchEnglish from 'src/components/SwitchEnglish'
 
 export default ({ data }) => {
   const post = data.contentfulBlogPost
+  const translatedMode = post.tags.some(o => o === 'Translated-Text')
+
   return (
     <Layout description={post.description} title={post.title}>
       <div className="post">
@@ -14,15 +17,17 @@ export default ({ data }) => {
             rel="noopener noreferrer"
             href={`https://twitter.com/intent/tweet?text=${
               post.title
-              }%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${
+            }%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${
               post.slug
-              }/&via=better_than_i_w`}
+            }/&via=better_than_i_w`}
             className="tweet"
           >
             Tweet
           </a>
         </div>
+        <SwitchEnglish translatedMode={translatedMode} />
         <div
+          className="post-content"
           dangerouslySetInnerHTML={{
             __html: post.content.childMarkdownRemark.html,
           }}
@@ -39,6 +44,7 @@ export const query = graphql`
       title
       description
       slug
+      tags
       content {
         childMarkdownRemark {
           html
