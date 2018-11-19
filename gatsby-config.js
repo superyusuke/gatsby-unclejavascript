@@ -47,6 +47,7 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-code-titles`,
+          `gatsby-plugin-root-import`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {

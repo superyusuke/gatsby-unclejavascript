@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "classnames": "^2.2.6",
     "gatsby": "^2.0.38",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "date-fns": "^1.29.0",
     "dotenv": "^6.1.0",
+    "gatsby-plugin-root-import": "^2.0.4",
     "prettier": "^1.14.3"
   },
   "repository": {
