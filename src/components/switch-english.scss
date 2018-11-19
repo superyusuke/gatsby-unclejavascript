@@ -1,0 +1,20 @@
+.switch-english {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+
+  &__button {
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid whitesmoke;
+
+    &--selected {
+      background: rebeccapurple;
+      border: 1px solid rebeccapurple;
+    }
+
+    &:last-child {
+      margin-left: 5px;
+    }
+  }
+}
