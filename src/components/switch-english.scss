@@ -10,8 +10,9 @@
     border: 1px solid whitesmoke;
 
     &--selected {
-      background: rebeccapurple;
-      border: 1px solid rebeccapurple;
+      color: black;
+      background: #ffd399;
+      border: 1px solid #ffd399;
     }
 
     &:last-child {
