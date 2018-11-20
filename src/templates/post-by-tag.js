@@ -28,7 +28,7 @@ export default ({ data, pageContext }) => {
 
 export const query = graphql`
   query($tag: String!) {
-    allContentfulBlogPost(filter: { tags: { eq: $tag } }) {
+    allContentfulBlogPost(filter: { tags: { eq: $tag } }, sort: { fields: [createdAt], order: DESC }) {
       edges {
         node {
           id
