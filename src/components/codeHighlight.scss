@@ -37,3 +37,8 @@ pre[class*='language-'] {
   transform-origin: bottom left;
   margin-top: 40px;
 }
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  background: #464646;
+}
