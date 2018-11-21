@@ -11,13 +11,13 @@ const IndexPage = ({ data }) => (
     description="JavaScript の初心者から、職業エンジニアまで、幅広く役立つプログラミング情報を、JavaScript おじさんこと中西が提供します。"
   >
     <ul>
-      {data.allContentfulBlogPost.edges.map(({ node }) => {
+      {data.allContentfulBlogPost.edges.map(({ node }, index) => {
         const date = parse(node.createdAt)
         const formattedDate = format(date, 'YYYY/MM/DD')
         return (
-          <li key={node.slug}>
+          <li key={node.slug} data-index={index}>
             <Link to={`${node.slug}`}>
-              {node.title}{' '}
+               {node.title}{' '}
               <span className="index-list__date">{formattedDate}</span>
             </Link>
           </li>
