@@ -1,4 +1,8 @@
 body {
+  //font-family: '游ゴシック体', YuGothic, '游ゴシック', 'Yu Gothic', 'メイリオ', 'Open Sans', sans-serif;
+  font-family: 'Fira Sans', sans-serif, '游ゴシック体', YuGothic, '游ゴシック',
+    'Yu Gothic', 'メイリオ';
+  font-weight: 500;
   background: rgb(28, 32, 34);
   color: rgba(255, 255, 255, 0.8);
 }
@@ -108,7 +112,7 @@ p {
     &__date {
       font-size: 12px;
       font-family: cursive;
-      color: #ffd399
+      color: #ffd399;
     }
   }
 }

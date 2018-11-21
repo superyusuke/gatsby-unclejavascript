@@ -22,7 +22,9 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "ress": "^1.2.2"
+    "ress": "^1.2.2",
+    "typeface-fira-sans": "^0.0.54",
+    "typeface-open-sans": "0.0.54"
   },
   "keywords": [
     "gatsby"

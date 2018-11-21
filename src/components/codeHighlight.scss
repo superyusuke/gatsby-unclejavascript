@@ -10,6 +10,7 @@
 
 .gatsby-highlight pre[class*='language-'] {
   border-radius: 0 8px 8px 8px;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .gatsby-code-title {
@@ -19,7 +20,7 @@
   padding: 0.7rem 1.05rem 0.4rem;
   font-size: 0.8em;
   line-height: 0.2;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: 'Fira Sans', sans-serif;
   font-weight: 600;
   display: table;
   border-radius: 8px 8px 0 0;
@@ -41,4 +42,9 @@ pre[class*='language-'] {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   background: #464646;
+}
+
+code[class*="language-"] {
+  font-family: 'Fira Sans', sans-serif;
+  line-height: 2.5;
 }
