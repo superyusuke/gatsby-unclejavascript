@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styles from './header.module.css'
+import styles from './header.module.scss'
 import classNames from 'classnames'
 
 const Header = ({ location }) => {
@@ -26,9 +26,9 @@ const Header = ({ location }) => {
           <li className={styles.item}>
             <Link
               className={classNames(styles.link, {
-                located: location === '/',
+                [styles.located]: location === '/article/',
               })}
-              to="/"
+              to="/article/"
             >
               Article
             </Link>
@@ -36,7 +36,7 @@ const Header = ({ location }) => {
           <li className={styles.item}>
             <Link
               className={classNames(styles.link, {
-                located: location === '/category/',
+                [styles.located]: location === '/category/',
               })}
               to="/category/"
             >
@@ -46,7 +46,7 @@ const Header = ({ location }) => {
           <li className={styles.item}>
             <Link
               className={classNames(styles.link, {
-                located: location === '/about/',
+                [styles.located]: location === '/about/',
               })}
               to="/about/"
             >
