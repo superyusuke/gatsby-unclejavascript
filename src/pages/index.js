@@ -24,6 +24,7 @@ const IndexPage = ({ data }) => (
         )
       })}
     </ul>
+    {data.allContentfulBlogPost.edges.length} 記事
   </Layout>
 )
 
