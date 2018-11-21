@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { Location } from '@reach/router'
 
-import Header from './header'
+import Header from './Header'
 import './layout.scss'
 import './codeHighlight.scss'
 
@@ -20,7 +21,11 @@ const Layout = ({ children, title, description, headerTitle }) => (
     >
       <html lang="en" />
     </Helmet>
-    <Header siteTitle={headerTitle} />
+    <Location>
+      {({ location }) => {
+        return <Header siteTitle={headerTitle} location={location.pathname}/>
+      }}
+    </Location>
     <div
       style={{
         margin: '0 auto',
