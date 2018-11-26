@@ -1,9 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
 import 'ress'
 import Layout from '../components/layout'
-import parse from 'date-fns/parse'
-import format from 'date-fns/format'
 
 const IndexPage = () => (
   <Layout
