@@ -5,7 +5,7 @@ import SwitchEnglish from 'src/components/SwitchEnglish'
 
 export default ({ data }) => {
   const post = data.contentfulBlogPost
-  const translatedMode = post.tags.some(o => o === 'Translated-Text')
+  const translatedMode = post.tags.some(o => o === 'Translated-Text' || o === 'Translated Text' )
 
   return (
     <Layout description={post.description} title={post.title}>
