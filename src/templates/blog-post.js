@@ -1,17 +1,19 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import SwitchEnglish from 'src/components/SwitchEnglish'
 
 export default ({ data }) => {
   const post = data.contentfulBlogPost
-  const translatedMode = post.tags.some(o => o === 'Translated-Text' || o === 'Translated Text' )
+  const translatedMode = post.tags.some(
+    o => o === 'Translated-Text' || o === 'Translated Text'
+  )
 
   return (
     <Layout description={post.description} title={post.title}>
       <div className="post">
         <div className="title-wrapper">
-          <h2 className="post-title">{post.title}</h2>
+          <h1 className="post-title">{post.title}</h1>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -25,7 +27,14 @@ export default ({ data }) => {
             Tweet
           </a>
         </div>
-        <SwitchEnglish translatedMode={translatedMode} />
+        <div className="post-ui-wrapper">
+          <div>
+            {post.tags.map(o => (
+              <Link to={o} className="post-ui-item">{o}</Link>
+            ))}
+          </div>
+          <SwitchEnglish translatedMode={translatedMode} />
+        </div>
         <div
           className="post-content"
           dangerouslySetInnerHTML={{

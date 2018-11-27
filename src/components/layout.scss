@@ -73,11 +73,11 @@ p {
 
 .title-wrapper {
   display: flex;
+  margin-bottom: 10px;
   align-items: center;
 }
 
 .post-title {
-  margin-top: 20px;
 }
 
 .post {
@@ -114,5 +114,27 @@ p {
       font-family: cursive;
       color: #ffd399;
     }
+  }
+}
+
+.post-ui-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.post-ui-item {
+  font-size: 14px;
+  font-weight: normal;
+  background: #ffd399;
+  color: black;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    color: #ffd399;
+    background: #40a9f3;
   }
 }
