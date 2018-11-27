@@ -1,11 +1,6 @@
 import React from 'react'
 import 'ress'
 import Layout from '../components/layout'
-import { css } from 'emotion'
-
-const cssStyle = css`
-  background: red;
-`
 
 const IndexPage = () => (
   <Layout
