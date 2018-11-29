@@ -121,6 +121,15 @@ p {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.post-ui-item-wrapper {
+  @media (max-width: 600px) {
+    margin-bottom: 50px;
+  }
 }
 
 .post-ui-item {

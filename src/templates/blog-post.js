@@ -28,7 +28,7 @@ export default ({ data }) => {
           </a>
         </div>
         <div className="post-ui-wrapper">
-          <div>
+          <div className="post-ui-item-wrapper">
             {post.tags.map(o => (
               <Link to={o} className="post-ui-item">{o}</Link>
             ))}
