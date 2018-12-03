@@ -30,7 +30,7 @@ export default ({ data }) => {
         <div className="post-ui-wrapper">
           <div className="post-ui-item-wrapper">
             {post.tags.map(o => (
-              <Link to={o} className="post-ui-item">{o}</Link>
+              <Link key={o} to={o} className="post-ui-item">{o}</Link>
             ))}
           </div>
           <SwitchEnglish translatedMode={translatedMode} />
