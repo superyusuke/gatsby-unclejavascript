@@ -29,6 +29,7 @@
     "react-helmet": "^5.2.0",
     "ress": "^1.2.2",
     "typeface-fira-sans": "^0.0.54",
+    "typeface-notosans-jp": "^1.0.1",
     "typeface-open-sans": "0.0.54",
     "typeface-source-code-pro": "^0.0.54"
   },

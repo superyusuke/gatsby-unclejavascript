@@ -12732,6 +12732,11 @@ typeface-fira-sans@^0.0.54:
   resolved "https://registry.yarnpkg.com/typeface-fira-sans/-/typeface-fira-sans-0.0.54.tgz#1a5fbd8fdc6195ee580e765dbcc4113df18f0f6f"
   integrity sha512-WPbYqk8w4YRWWCGOrBDXo0iPUmNdTR3frTq2I16+RSLJMNbIDjRMpbMjmyMipBmXN8bwuvyumCgJ5oGpuzpY3g==
 
+typeface-notosans-jp@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/typeface-notosans-jp/-/typeface-notosans-jp-1.0.1.tgz#acfcc0aaf0dd3ffd83e537d8db017bb4c0dc96e3"
+  integrity sha1-rPzAqvDdP/2D5TfY2wF7tMDcluM=
+
 typeface-open-sans@0.0.54:
   version "0.0.54"
   resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-0.0.54.tgz#20f5b5ea5c7f95d89dc1f8b2d2b1457680129cee"
