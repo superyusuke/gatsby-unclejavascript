@@ -22,7 +22,7 @@ class SwitchEnglish extends React.Component {
     console.log(this.state.english)
   }
 
-  buttonStyle(bool) {
+  buttonStyle = bool => {
     return classNames('switch-english__button', {
       'switch-english__button--selected': bool,
     })

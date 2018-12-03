@@ -12737,6 +12737,11 @@ typeface-open-sans@0.0.54:
   resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-0.0.54.tgz#20f5b5ea5c7f95d89dc1f8b2d2b1457680129cee"
   integrity sha512-w6wOd6EicZdZKf0jSU/K3EzEi3zFgvWQSN7NOpRIQI5KeMWmC5Pg/lqtBVJHB0pRChYRmLdhf4h8ROur0A3JZQ==
 
+typeface-source-code-pro@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-source-code-pro/-/typeface-source-code-pro-0.0.54.tgz#520c7625ab17c4340a383b22d1a07d736349ecbb"
+  integrity sha512-rzCoj8PrX55xuBXJPlSGIFzRdWSRjJyvgVjRrDFEdlej2yFaKcff8O7AmNmHApqMmIreYNS563eb3ZjdSgRqpg==
+
 ua-parser-js@^0.7.18:
   version "0.7.19"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.19.tgz#94151be4c0a7fb1d001af7022fdaca4642659e4b"
