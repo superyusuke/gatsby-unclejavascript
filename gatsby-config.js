@@ -55,6 +55,9 @@ module.exports = {
           `gatsby-remark-code-titles`,
           `gatsby-plugin-root-import`,
           {
+            resolve: 'gatsby-remark-external-links',
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
