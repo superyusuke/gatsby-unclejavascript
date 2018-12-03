@@ -32,12 +32,13 @@ export default IndexPage
 
 export const query = graphql`
   {
-    allContentfulBlogPost(sort: { fields: [createdAt], order: DESC }) {
+    allContentfulBlogPost(sort: { fields: [updatedAt], order: DESC }) {
       edges {
         node {
           title
           slug
           createdAt
+          updatedAt
           tags
         }
       }
