@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://uncle-javascript.com/`,
+    siteUrl: `https://uncle-javascript.com`,
     title: 'JavaScript おじさん.com',
     description: 'JavaScript の推進を推進',
   },
