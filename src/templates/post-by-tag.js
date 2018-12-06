@@ -16,7 +16,7 @@ export default ({ data, pageContext }) => {
           return (
             <li key={node.slug}>
               <Link to={`${node.slug}`}>
-                {node.title} {formattedDate}
+                {node.title} <span className="index-list__date">{formattedDate}</span>
               </Link>
             </li>
           )
