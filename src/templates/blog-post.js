@@ -12,7 +12,7 @@ export default ({ data }) => {
   const { content } = post
   if(!content) {
     console.log(post)
-    return null
+    return <div>Error</div>
   }
   return (
     <Layout description={post.description} title={post.title}>
