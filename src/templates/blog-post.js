@@ -12,7 +12,7 @@ export default ({ data }) => {
   const { content } = post
   // console.log(content)
   if(!content) {
-    return <div>nashi</div>
+    return null
   }
 
   return (
