@@ -10,11 +10,10 @@ export default ({ data }) => {
   )
 
   const { content } = post
-  // console.log(content)
   if(!content) {
+    console.log(post)
     return null
   }
-
   return (
     <Layout description={post.description} title={post.title}>
       <div className="post">
