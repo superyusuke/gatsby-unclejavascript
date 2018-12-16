@@ -99,10 +99,18 @@ p {
 
   ul {
     margin: 35px;
+
+    &> li {
+      list-style-type: square;
+    }
   }
 
-  li {
-    list-style-type: square;
+  ol {
+    margin: 35px;
+
+    & > li {
+      list-style-type: decimal
+    }
   }
 }
 
