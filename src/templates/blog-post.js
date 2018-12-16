@@ -9,6 +9,11 @@ export default ({ data }) => {
     o => o === 'Translated-Text' || o === 'Translated Text'
   )
 
+  const { content } = post
+  if(!content) {
+    console.log(post)
+    return <div>Error</div>
+  }
   return (
     <Layout description={post.description} title={post.title}>
       <div className="post">
