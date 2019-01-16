@@ -18,8 +18,29 @@ const Header = ({ location }) => {
         }}
       >
         <h1 style={{ margin: 0 }}>
-          <Link to="/" style={{ color: '#FFD399' }}>
-            JavaScript おじさん .com
+          <Link to="/" style={{ color: '#FFD399', width: '100%', marginBottom: '20px' }}>
+            <div className="foo">
+              <span className="letter" data-letter="U">U</span>
+              <span className="letter" data-letter="n">n</span>
+              <span className="letter" data-letter="c">c</span>
+              <span className="letter" data-letter="l">l</span>
+              <span className="letter" data-letter="e">e</span>
+              <span className="letter" data-letter=" ">&nbsp;</span>
+              <span className="letter" data-letter="J">J</span>
+              <span className="letter" data-letter="a">a</span>
+              <span className="letter" data-letter="v">v</span>
+              <span className="letter" data-letter="a">a</span>
+              <span className="letter" data-letter="S">S</span>
+              <span className="letter" data-letter="c">c</span>
+              <span className="letter" data-letter="r">r</span>
+              <span className="letter" data-letter="i">i</span>
+              <span className="letter" data-letter="p">p</span>
+              <span className="letter" data-letter="t">t</span>
+              <span className="letter" data-letter=".">.</span>
+              <span className="letter" data-letter="c">c</span>
+              <span className="letter" data-letter="o">o</span>
+              <span className="letter" data-letter="m">m</span>
+            </div>
           </Link>
         </h1>
         <ul className={styles.wrapper}>
