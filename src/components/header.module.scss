@@ -2,6 +2,10 @@
   display: flex;
   justify-content: flex-end;
   list-style: none;
+
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+  }
 }
 
 .item {
@@ -9,6 +13,7 @@
 }
 
 .link {
+  font-weight: 900;
   line-height: 1.5;
   opacity: 0.6;
   border-bottom: 2px solid transparent;
