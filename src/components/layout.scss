@@ -61,7 +61,7 @@ p {
   border-radius: 5px;
   margin-left: 10px;
 
-  @media screen and (max-width: 670px) {
+  @media screen and (max-width: 600px) {
     opacity: 0.7;
     bottom: 0;
     right: 0;
@@ -100,7 +100,7 @@ p {
   ul {
     margin: 35px;
 
-    &> li {
+    & > li {
       list-style-type: square;
     }
   }
@@ -109,7 +109,7 @@ p {
     margin: 35px;
 
     & > li {
-      list-style-type: decimal
+      list-style-type: decimal;
     }
   }
 }
@@ -157,4 +157,58 @@ p {
 
 .twitter-tweet {
   margin: 0 auto;
+}
+
+div.foo {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.letter {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 50px;
+  position: relative;
+  color: #40a9f3;
+  transform-style: preserve-3d;
+  z-index: 1;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 7vw;
+  }
+}
+.letter:before,
+.letter:after {
+  position: absolute;
+  content: attr(data-letter);
+  transform-origin: top left;
+  top: 0;
+  left: 0;
+}
+.letter,
+.letter:before,
+.letter:after {
+  transition: all 0.3s ease-in-out;
+}
+.letter:before {
+  color: #ffd399;
+  text-shadow: -1px 0px 1px rgba(255, 255, 255, 0.8),
+    1px 0px 1px rgba(3, 3, 3, 0.8);
+  z-index: 3;
+  transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg);
+}
+.letter:after {
+  color: rgba(24, 19, 19, 0.11);
+  z-index: 2;
+  transform: scale(1.08, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    skew(0deg, 1deg);
+}
+.letter:hover:before {
+  color: yellow;
+  transform: rotateX(0deg) rotateY(-50deg) rotateZ(0deg);
+}
+.letter:hover:after {
+  transform: scale(1.08, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg)
+    skew(0deg, 22deg);
 }
