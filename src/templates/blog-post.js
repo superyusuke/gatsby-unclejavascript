@@ -6,11 +6,11 @@ import SwitchEnglish from 'src/components/SwitchEnglish'
 export default ({ data }) => {
   const post = data.contentfulBlogPost
   const translatedMode = post.tags.some(
-    o => o === 'Translated-Text' || o === 'Translated Text'
+    o => o === 'Translated-Text' || o === 'Translated Text',
   )
 
   const { content } = post
-  if(!content) {
+  if (!content) {
     console.log(post)
     return <div>Error</div>
   }
@@ -34,9 +34,25 @@ export default ({ data }) => {
         </div>
         <div className="post-ui-wrapper">
           <div className="post-ui-item-wrapper">
-            {post.tags.map(o => (
-              <Link key={o} to={o} className="post-ui-item">{o}</Link>
-            ))}
+            {post.tags.map(o => {
+              console.log(o)
+              if (o === 'Vue Udemy') {
+                return (
+                  <Link
+                    key={o}
+                    to={'vue-vuex-udemy-text'}
+                    className="post-ui-item"
+                  >
+                    {o}
+                  </Link>
+                )
+              }
+              return (
+                <Link key={o} to={o} className="post-ui-item">
+                  {o}
+                </Link>
+              )
+            })}
           </div>
           <SwitchEnglish translatedMode={translatedMode} />
         </div>
