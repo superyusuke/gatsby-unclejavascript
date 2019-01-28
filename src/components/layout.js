@@ -28,7 +28,7 @@ const Layout = ({ children, title, description, headerTitle }) => (
     </Location>
     <div
       style={{
-        margin: '0 auto',
+        margin: '0 auto 100px',
         maxWidth: 960,
         padding: '0 20px',
         paddingTop: 0,
