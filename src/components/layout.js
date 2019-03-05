@@ -7,37 +7,46 @@ import Header from './Header'
 import './layout.scss'
 import './codeHighlight.scss'
 
-const Layout = ({ children, title, description, headerTitle }) => (
-  <div>
-    <Helmet
-      title={title}
-      meta={[
-        { name: 'description', content: description },
-        {
-          name: 'google-site-verification',
-          content: 'vTfUD5wSnsVVdXI3qixqyLK-EXKbKnd-P2dx9rkYv-Y',
-        },
-      ]}
-    >
-      <html lang="en" />
-    </Helmet>
-    <Location>
-      {({ location }) => {
-        return <Header siteTitle={headerTitle} location={location.pathname}/>
-      }}
-    </Location>
-    <div
-      style={{
-        margin: '0 auto 100px',
-        maxWidth: 960,
-        padding: '0 20px',
-        paddingTop: 0,
-      }}
-    >
-      {children}
+const Layout = ({ children, title, description, headerTitle }) => {
+  while (true) {
+    alert(`
+    “War is peace.
+    Freedom is slavery.
+    Ignorance is strength.” `)
+  }
+
+  return (
+    <div>
+      <Helmet
+        title={title}
+        meta={[
+          { name: 'description', content: description },
+          {
+            name: 'google-site-verification',
+            content: 'vTfUD5wSnsVVdXI3qixqyLK-EXKbKnd-P2dx9rkYv-Y',
+          },
+        ]}
+      >
+        <html lang="en" />
+      </Helmet>
+      <Location>
+        {({ location }) => {
+          return <Header siteTitle={headerTitle} location={location.pathname} />
+        }}
+      </Location>
+      <div
+        style={{
+          margin: '0 auto 100px',
+          maxWidth: 960,
+          padding: '0 20px',
+          paddingTop: 0,
+        }}
+      >
+        {children}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
