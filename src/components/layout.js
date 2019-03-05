@@ -7,14 +7,9 @@ import Header from './Header'
 import './layout.scss'
 import './codeHighlight.scss'
 
-const Layout = ({ children, title, description, headerTitle }) => {
-  while (true) {
-    alert(`
-    “War is peace.
-    Freedom is slavery.
-    Ignorance is strength.” `)
-  }
+import Peace from './Peace'
 
+const Layout = ({ children, title, description, headerTitle }) => {
   return (
     <div>
       <Helmet
@@ -34,6 +29,7 @@ const Layout = ({ children, title, description, headerTitle }) => {
           return <Header siteTitle={headerTitle} location={location.pathname} />
         }}
       </Location>
+      <Peace />
       <div
         style={{
           margin: '0 auto 100px',
