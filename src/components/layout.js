@@ -6,6 +6,7 @@ import { Location } from '@reach/router'
 import Header from './Header'
 import './layout.scss'
 import './codeHighlight.scss'
+import Peace from './Peace'
 
 const Layout = ({ children, title, description, headerTitle }) => {
   return (
@@ -35,6 +36,7 @@ const Layout = ({ children, title, description, headerTitle }) => {
           paddingTop: 0,
         }}
       >
+        <Peace />
         {children}
       </div>
     </div>
