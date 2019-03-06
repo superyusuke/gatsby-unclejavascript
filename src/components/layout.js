@@ -29,7 +29,7 @@ const Layout = ({ children, title, description, headerTitle }) => {
           return <Header siteTitle={headerTitle} location={location.pathname} />
         }}
       </Location>
-      <Peace />
+      {/*<Peace />*/}
       <div
         style={{
           margin: '0 auto 100px',
