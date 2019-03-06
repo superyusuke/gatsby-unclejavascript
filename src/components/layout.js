@@ -7,8 +7,6 @@ import Header from './Header'
 import './layout.scss'
 import './codeHighlight.scss'
 
-import Peace from './Peace'
-
 const Layout = ({ children, title, description, headerTitle }) => {
   return (
     <div>
@@ -29,7 +27,6 @@ const Layout = ({ children, title, description, headerTitle }) => {
           return <Header siteTitle={headerTitle} location={location.pathname} />
         }}
       </Location>
-      {/*<Peace />*/}
       <div
         style={{
           margin: '0 auto 100px',
