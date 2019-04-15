@@ -11,7 +11,7 @@ export default ({ data }) => {
 
   const { content } = post
   if (!content) {
-    console.log(post)
+    console.warn(post)
     return <div>Error</div>
   }
   return (
@@ -35,7 +35,6 @@ export default ({ data }) => {
         <div className="post-ui-wrapper">
           <div className="post-ui-item-wrapper">
             {post.tags.map(o => {
-              console.log(o)
               if (o === 'Vue Udemy') {
                 return (
                   <Link
