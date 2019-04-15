@@ -34,7 +34,6 @@ export default ({ data, pageContext }) => {
         target="_blank"
         rel="noopener noreferrer"
         href={`https://twitter.com/intent/tweet?text=${tag}%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${tag}/&via=better_than_i_w`}
-        className="tweet"
         css={tweet}
       >
         Tweet
