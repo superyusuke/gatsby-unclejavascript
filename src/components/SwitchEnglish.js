@@ -12,14 +12,12 @@ class SwitchEnglish extends React.Component {
     const quote = document.querySelectorAll('blockquote')
     quote.forEach(o => (o.style.display = 'none'))
     this.setState({ english: false })
-    console.log(this.state.english)
   }
 
   block = () => {
     const quote = document.querySelectorAll('blockquote')
     quote.forEach(o => (o.style.display = 'block'))
     this.setState({ english: true })
-    console.log(this.state.english)
   }
 
   buttonStyle = bool => {
