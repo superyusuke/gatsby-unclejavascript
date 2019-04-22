@@ -3,7 +3,9 @@ import { Link, graphql } from 'gatsby'
 import 'ress'
 import Layout from '../components/layout'
 import _flattenDeep from 'lodash/flattenDeep'
-import _uniq from 'lodash/uniq'
+import _countBy from 'lodash/countBy'
+import _toPairs from 'lodash/toPairs'
+import _sortBy from 'lodash/sortBy'
 
 import '../components/category.scss'
 
@@ -11,7 +13,9 @@ const Category = ({ data }) => {
   const tags2DArray = data.allContentfulBlogPost.edges.map(
     ({ node }) => node.tags,
   )
-  const tagsArray = _uniq(_flattenDeep(tags2DArray))
+  const categoryCountObject = _countBy(_flattenDeep(tags2DArray))
+  const pairs = _toPairs(categoryCountObject)
+  const sortedPairs = _sortBy(pairs, pair => pair[1]).reverse()
 
   return (
     <Layout
@@ -23,14 +27,19 @@ const Category = ({ data }) => {
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'space-between',
-          marginLeft: '-4px'
+          marginLeft: '-4px',
         }}
       >
-        {tagsArray.map(tag => {
+        {sortedPairs.map(pair => {
+          const tag = pair[0]
+          const length = pair[1]
           return (
             <li className="category-list__item" key={tag}>
               <Link className="category-list__link" to={tag}>
                 {tag}
+                <span style={{ fontSize: '10px' }}>
+                  ({length})
+                </span>
               </Link>
             </li>
           )
