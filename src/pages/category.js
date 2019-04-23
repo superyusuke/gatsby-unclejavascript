@@ -37,9 +37,7 @@ const Category = ({ data }) => {
             <li className="category-list__item" key={tag}>
               <Link className="category-list__link" to={tag}>
                 {tag}
-                <span style={{ fontSize: '10px' }}>
-                  ({length})
-                </span>
+                <span style={{ fontSize: '10px' }}>({length})</span>
               </Link>
             </li>
           )
