@@ -51,6 +51,7 @@
   "devDependencies": {
     "date-fns": "^1.29.0",
     "dotenv": "^6.1.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-root-import": "^2.0.4",
     "prettier": "^1.14.3"
   },
