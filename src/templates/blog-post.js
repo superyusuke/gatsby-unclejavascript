@@ -3,6 +3,20 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import SwitchEnglish from 'src/components/SwitchEnglish'
 
+const toIndexPage = tag => {
+  switch (tag) {
+    case 'Vue Udemy': {
+      return 'vue-vuex-udemy-text'
+    }
+    case 'Rails is JavaScript': {
+      return 'rails-is-javascript'
+    }
+    default: {
+      return tag
+    }
+  }
+}
+
 export default ({ data }) => {
   const post = data.contentfulBlogPost
   const translatedMode = post.tags.some(
@@ -35,19 +49,8 @@ export default ({ data }) => {
         <div className="post-ui-wrapper">
           <div className="post-ui-item-wrapper">
             {post.tags.map(o => {
-              if (o === 'Vue Udemy') {
-                return (
-                  <Link
-                    key={o}
-                    to={'vue-vuex-udemy-text'}
-                    className="post-ui-item"
-                  >
-                    {o}
-                  </Link>
-                )
-              }
               return (
-                <Link key={o} to={o} className="post-ui-item">
+                <Link key={o} to={toIndexPage(o)} className="post-ui-item">
                   {o}
                 </Link>
               )
