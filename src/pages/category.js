@@ -9,6 +9,8 @@ import _sortBy from 'lodash/sortBy'
 
 import '../components/category.scss'
 
+import { toIndexPage } from 'src/templates/blog-post'
+
 const Category = ({ data }) => {
   const tags2DArray = data.allContentfulBlogPost.edges.map(
     ({ node }) => node.tags,
@@ -35,7 +37,7 @@ const Category = ({ data }) => {
           const length = pair[1]
           return (
             <li className="category-list__item" key={tag}>
-              <Link className="category-list__link" to={tag}>
+              <Link className="category-list__link" to={toIndexPage(tag)}>
                 {tag}
                 <span style={{ fontSize: '10px' }}>({length})</span>
               </Link>

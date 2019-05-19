@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import SwitchEnglish from 'src/components/SwitchEnglish'
 
-const toIndexPage = tag => {
+export const toIndexPage = tag => {
   switch (tag) {
     case 'Vue Udemy': {
       return 'vue-vuex-udemy-text'
