@@ -1,7 +1,9 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from 'src/components/layout'
 import SwitchEnglish from 'src/components/SwitchEnglish'
+
+import UdemyCM from 'src/components/cm/udemy'
 
 export const toIndexPage = tag => {
   switch (tag) {
@@ -58,12 +60,14 @@ export default ({ data }) => {
           </div>
           <SwitchEnglish translatedMode={translatedMode} />
         </div>
+        <UdemyCM />
         <div
           className="post-content"
           dangerouslySetInnerHTML={{
             __html: post.content.childMarkdownRemark.html,
           }}
         />
+        <UdemyCM />
       </div>
     </Layout>
   )
