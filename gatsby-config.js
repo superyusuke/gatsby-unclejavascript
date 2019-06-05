@@ -69,9 +69,15 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          'src': 'src',
+          src: 'src',
         },
         extensions: ['js'],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-141546377-1',
       },
     },
   ],
