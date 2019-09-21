@@ -1,11 +1,23 @@
+// eslint-disable-next-line
 import React from 'react'
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core'
 import { Link } from 'gatsby'
 import styles from './header.module.scss'
 import classNames from 'classnames'
 
+const headerStyles = css`
+   {
+    @media print {
+      display: none;
+    }
+  }
+`
+
 const Header = ({ location }) => {
   return (
     <div
+      css={headerStyles}
       style={{
         marginBottom: '1.45rem',
       }}

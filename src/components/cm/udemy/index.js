@@ -46,6 +46,9 @@ const wrapperStyle = css`
     width: 700px;
     padding-bottom: 30px;
   }
+  @media print {
+    display: none;
+  }
 `
 
 const UdemyCMIndex = () => {
