@@ -4,6 +4,10 @@ body {
   font-weight: 500;
   background: rgb(28, 32, 34);
   color: rgba(255, 255, 255, 0.8);
+  @media print {
+    background: white;
+    color: black;
+  }
 }
 
 h1 {
