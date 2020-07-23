@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Layout from 'src/components/layout'
+import { Layout } from 'src/components/Layout'
 import SwitchEnglish from 'src/components/SwitchEnglish'
 
 import UdemyCM from 'src/components/cm/udemy'
 
-export const toIndexPage = tag => {
+export const toIndexPage = (tag) => {
   switch (tag) {
     case 'Vue Udemy': {
       return 'vue-vuex-udemy-text'
@@ -22,7 +22,7 @@ export const toIndexPage = tag => {
 export default ({ data }) => {
   const post = data.contentfulBlogPost
   const translatedMode = post.tags.some(
-    o => o === 'Translated-Text' || o === 'Translated Text',
+    (o) => o === 'Translated-Text' || o === 'Translated Text',
   )
 
   const { content } = post
@@ -38,11 +38,7 @@ export default ({ data }) => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://twitter.com/intent/tweet?text=${
-              post.title
-            }%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${
-              post.slug
-            }/&via=better_than_i_w`}
+            href={`https://twitter.com/intent/tweet?text=${post.title}%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${post.slug}/&via=better_than_i_w`}
             className="tweet"
           >
             Tweet
@@ -50,9 +46,13 @@ export default ({ data }) => {
         </div>
         <div className="post-ui-wrapper">
           <div className="post-ui-item-wrapper">
-            {post.tags.map(o => {
+            {post.tags.map((o) => {
               return (
-                <Link key={o} to={toIndexPage(o)} className="post-ui-item">
+                <Link
+                  key={o}
+                  to={`/${toIndexPage(o)}`}
+                  className="post-ui-item"
+                >
                   {o}
                 </Link>
               )

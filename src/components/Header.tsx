@@ -1,8 +1,7 @@
-// eslint-disable-next-line
-import React from 'react'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import { Link } from 'gatsby'
+// @ts-ignore
 import styles from './header.module.scss'
 import classNames from 'classnames'
 
@@ -14,7 +13,14 @@ const headerStyles = css`
   }
 `
 
-const Header = ({ location }) => {
+type Props = {
+  location: string
+  siteTitle: string
+}
+
+export const Header = (props: Props) => {
+  const { location, siteTitle } = props
+
   return (
     <div
       css={headerStyles}
@@ -134,5 +140,3 @@ const Header = ({ location }) => {
     </div>
   )
 }
-
-export default Header

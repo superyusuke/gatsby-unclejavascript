@@ -1,13 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import * as React from 'react'
+import { Helmet } from 'react-helmet'
 import { Location } from '@reach/router'
 
-import Header from './Header'
+import { Header } from './Header'
 import './layout.scss'
 import './codeHighlight.scss'
 
-const Layout = ({ children, title, description, headerTitle }) => {
+type Props = {
+  title: string
+  description: string
+  headerTitle: string
+}
+
+export const Layout: React.FC<Props> = (props) => {
+  const { title, description, children, headerTitle } = props
+
   return (
     <div>
       <Helmet
@@ -40,9 +47,3 @@ const Layout = ({ children, title, description, headerTitle }) => {
     </div>
   )
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout

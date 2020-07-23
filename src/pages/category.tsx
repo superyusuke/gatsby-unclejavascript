@@ -1,28 +1,26 @@
-import React from 'react'
+import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import 'ress'
-import Layout from '../components/layout'
-import _flattenDeep from 'lodash/flattenDeep'
-import _countBy from 'lodash/countBy'
-import _toPairs from 'lodash/toPairs'
-import _sortBy from 'lodash/sortBy'
+import { Layout } from 'src/components/Layout'
+import { flattenDeep, countBy, toPairs, sortBy } from 'lodash'
 
 import '../components/category.scss'
 
 import { toIndexPage } from 'src/templates/blog-post'
 
-const Category = ({ data }) => {
+const Category = ({ data }: { data: any }) => {
   const tags2DArray = data.allContentfulBlogPost.edges.map(
-    ({ node }) => node.tags,
+    ({ node }: { node: any }) => node.tags,
   )
-  const categoryCountObject = _countBy(_flattenDeep(tags2DArray))
-  const pairs = _toPairs(categoryCountObject)
-  const sortedPairs = _sortBy(pairs, pair => pair[1]).reverse()
+  const categoryCountObject = countBy(flattenDeep(tags2DArray))
+  const pairs = toPairs(categoryCountObject)
+  const sortedPairs = sortBy(pairs, (pair) => pair[1]).reverse()
 
   return (
     <Layout
       title="Javascript おじさん.com"
       description="JavaScript の初心者から、職業エンジニアまで、幅広く役立つプログラミング情報を、JavaScript おじさんこと中西が提供します。"
+      headerTitle="Javascript おじさん.com"
     >
       <ul
         style={{
@@ -32,12 +30,12 @@ const Category = ({ data }) => {
           marginLeft: '-4px',
         }}
       >
-        {sortedPairs.map(pair => {
+        {sortedPairs.map((pair) => {
           const tag = pair[0]
           const length = pair[1]
           return (
             <li className="category-list__item" key={tag}>
-              <Link className="category-list__link" to={toIndexPage(tag)}>
+              <Link className="category-list__link" to={`/${toIndexPage(tag)}`}>
                 {tag}
                 <span style={{ fontSize: '10px' }}>({length})</span>
               </Link>

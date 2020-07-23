@@ -1,12 +1,11 @@
-// eslint-disable-next-line
-import React from 'react'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import { graphql, Link } from 'gatsby'
-import parse from 'date-fns/parse'
-import format from 'date-fns/format'
-import Layout from '../components/layout'
+import { Layout } from '../components/Layout'
 import '../components/post-by-tag.scss'
+
+import parseISO from 'date-fns/parseISO'
+import format from 'date-fns/format'
 
 const tweet = css`
    {
@@ -28,25 +27,25 @@ const tweet = css`
 
 export default ({ data, pageContext }) => {
   const { tag } = pageContext
+  const encodedTag = encodeURI(tag)
+
   return (
     <Layout title={`${tag} のページ`} description={`${tag} ごとのページ`}>
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href={`https://twitter.com/intent/tweet?text=${tag}%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${tag}/&via=better_than_i_w`}
+        href={`https://twitter.com/intent/tweet?text=${encodedTag}%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${encodedTag}/&via=better_than_i_w`}
         css={tweet}
       >
-        Tweet
+        Tweet aa
       </a>
       <ul>
         {data.allContentfulBlogPost.edges.map(({ node }) => {
-          const date = parse(node.createdAt)
-          const formattedDate = format(date, 'YYYY/MM/DD')
+          const date = format(parseISO(node.createdAt), 'yyyy/MM/dd')
           return (
             <li key={node.slug}>
-              <Link to={`${node.slug}`}>
-                {node.title}{' '}
-                <span className="index-list__date">{formattedDate}</span>
+              <Link to={`/${node.slug}`}>
+                {node.title} <span className="index-list__date">{date}</span>
               </Link>
             </li>
           )
