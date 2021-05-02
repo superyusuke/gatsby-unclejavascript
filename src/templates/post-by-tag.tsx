@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import { graphql, Link } from 'gatsby'
-import { Layout } from '../components/Layout'
-import '../components/post-by-tag.scss'
+import { Layout } from 'src/components/Layout'
+import 'src/components/post-by-tag.scss'
 
 import parseISO from 'date-fns/parseISO'
 import format from 'date-fns/format'

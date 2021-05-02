@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 import 'ress'
-import { Layout } from '../components/Layout'
+import { Layout } from 'src/components/Layout'
 import parseISO from 'date-fns/parseISO'
 import format from 'date-fns/format'
 

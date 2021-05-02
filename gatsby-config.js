@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-twitter`,
+    `gatsby-plugin-root-import`,
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
@@ -30,13 +31,6 @@ module.exports = {
     },
     'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-sass',
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `src`,
-    //     path: `${__dirname}/src/`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -49,7 +43,6 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-code-titles`,
-          `gatsby-plugin-root-import`,
           {
             resolve: 'gatsby-remark-external-links',
           },
