@@ -1,12 +1,28 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/layout'
+import { Layout } from 'src/components/Layout'
 import SwitchEnglish from 'src/components/SwitchEnglish'
+
+import UdemyCM from 'src/components/cm/udemy'
+
+export const toIndexPage = (tag) => {
+  switch (tag) {
+    case 'Vue Udemy': {
+      return 'vue-vuex-udemy-text'
+    }
+    case 'Rails is JavaScript': {
+      return 'rails-is-javascript'
+    }
+    default: {
+      return tag
+    }
+  }
+}
 
 export default ({ data }) => {
   const post = data.contentfulBlogPost
   const translatedMode = post.tags.some(
-    o => o === 'Translated-Text' || o === 'Translated Text',
+    (o) => o === 'Translated-Text' || o === 'Translated Text',
   )
 
   const { content } = post
@@ -22,11 +38,7 @@ export default ({ data }) => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://twitter.com/intent/tweet?text=${
-              post.title
-            }%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${
-              post.slug
-            }/&via=better_than_i_w`}
+            href={`https://twitter.com/intent/tweet?text=${post.title}%0a&hashtags=UncleJavascript&url=https://uncle-javascript.com/${post.slug}/&via=better_than_i_w`}
             className="tweet"
           >
             Tweet
@@ -34,20 +46,13 @@ export default ({ data }) => {
         </div>
         <div className="post-ui-wrapper">
           <div className="post-ui-item-wrapper">
-            {post.tags.map(o => {
-              if (o === 'Vue Udemy') {
-                return (
-                  <Link
-                    key={o}
-                    to={'vue-vuex-udemy-text'}
-                    className="post-ui-item"
-                  >
-                    {o}
-                  </Link>
-                )
-              }
+            {post.tags.map((o) => {
               return (
-                <Link key={o} to={o} className="post-ui-item">
+                <Link
+                  key={o}
+                  to={`/${toIndexPage(o)}`}
+                  className="post-ui-item"
+                >
                   {o}
                 </Link>
               )
@@ -55,12 +60,14 @@ export default ({ data }) => {
           </div>
           <SwitchEnglish translatedMode={translatedMode} />
         </div>
+        <UdemyCM />
         <div
           className="post-content"
           dangerouslySetInnerHTML={{
             __html: post.content.childMarkdownRemark.html,
           }}
         />
+        <UdemyCM />
       </div>
     </Layout>
   )

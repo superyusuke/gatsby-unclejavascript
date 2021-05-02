@@ -1,11 +1,29 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core'
 import { Link } from 'gatsby'
+// @ts-ignore
 import styles from './header.module.scss'
 import classNames from 'classnames'
 
-const Header = ({ location }) => {
+const headerStyles = css`
+   {
+    @media print {
+      display: none;
+    }
+  }
+`
+
+type Props = {
+  location: string
+  siteTitle: string
+}
+
+export const Header = (props: Props) => {
+  const { location, siteTitle } = props
+
   return (
     <div
+      css={headerStyles}
       style={{
         marginBottom: '1.45rem',
       }}
@@ -122,5 +140,3 @@ const Header = ({ location }) => {
     </div>
   )
 }
-
-export default Header

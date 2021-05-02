@@ -1,36 +1,43 @@
-import React from 'react'
+import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import 'ress'
-import Layout from '../components/layout'
-import _flattenDeep from 'lodash/flattenDeep'
-import _uniq from 'lodash/uniq'
+import { Layout } from 'src/components/Layout'
+import { flattenDeep, countBy, toPairs, sortBy } from 'lodash'
 
 import '../components/category.scss'
 
-const Category = ({ data }) => {
+import { toIndexPage } from 'src/templates/blog-post'
+
+const Category = ({ data }: { data: any }) => {
   const tags2DArray = data.allContentfulBlogPost.edges.map(
-    ({ node }) => node.tags,
+    ({ node }: { node: any }) => node.tags,
   )
-  const tagsArray = _uniq(_flattenDeep(tags2DArray))
+  const categoryCountObject = countBy(flattenDeep(tags2DArray))
+  const pairs = toPairs(categoryCountObject)
+  const sortedPairs = sortBy(pairs, (pair) => pair[1]).reverse()
 
   return (
     <Layout
       title="Javascript おじさん.com"
       description="JavaScript の初心者から、職業エンジニアまで、幅広く役立つプログラミング情報を、JavaScript おじさんこと中西が提供します。"
+      headerTitle="Javascript おじさん.com"
     >
       <ul
         style={{
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'space-between',
-          marginLeft: '-4px'
+          marginLeft: '-4px',
         }}
       >
-        {tagsArray.map(tag => {
+        {sortedPairs.map((pair) => {
+          const tag = pair[0]
+          const length = pair[1]
           return (
             <li className="category-list__item" key={tag}>
-              <Link className="category-list__link" to={tag}>
+              <Link className="category-list__link" to={`/${toIndexPage(tag)}`}>
                 {tag}
+                <span style={{ fontSize: '10px' }}>({length})</span>
               </Link>
             </li>
           )

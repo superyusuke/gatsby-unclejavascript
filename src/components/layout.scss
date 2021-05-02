@@ -4,6 +4,10 @@ body {
   font-weight: 500;
   background: rgb(28, 32, 34);
   color: rgba(255, 255, 255, 0.8);
+  @media print {
+    background: white;
+    color: black;
+  }
 }
 
 h1 {
@@ -15,7 +19,7 @@ h2 {
   color: rgb(255, 211, 153);
   margin: 40px 0 40px;
   transition: color 0.4s ease-in-out;
-  border-left: 5px solid #40A9F3;
+  border-left: 5px solid #40a9f3;
   display: inline-block;
   padding-left: 10px;
 }
@@ -62,6 +66,10 @@ p {
     right: 0;
     position: fixed;
     margin: 5px;
+  }
+
+  @media print {
+    display: none;
   }
 }
 
@@ -125,6 +133,9 @@ p {
   margin-bottom: 40px;
   @media (max-width: 600px) {
     flex-direction: column;
+  }
+  @media print {
+    display: none;
   }
 }
 
